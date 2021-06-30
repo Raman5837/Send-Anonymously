@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_animation"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_above="@id/number"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_weight="2"
+                android:autoSizeMinTextSize="14sp"
+                android:background="@drawable/choose_country_bg"
+                android:fontFamily="@font/baumans"
+                android:paddingTop="4dp"
+                android:text="Choose Country"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/number"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                app:ccpDialog_backgroundColor="@color/grey"
+                app:ccpDialog_fastScroller_bubbleColor="@color/yellow"
+                app:ccpDialog_fastScroller_handleColor="@color/blue"
+                app:ccpDialog_keyboardAutoPopup="true"
+                app:ccpDialog_searchEditTextTint="@color/yellow"
+                app:ccpDialog_showCloseIcon="true"
+                app:ccpDialog_textColor="@android:color/white"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_autoFormatNumber="false"
+                app:ccp_contentColor="@color/grey"
+                app:ccp_countryAutoDetectionPref="SIM_NETWORK_LOCALE"
+                app:ccp_countryPreference="IN"
+                app:ccp_defaultNameCode="IN"
+                app:ccp_hintExampleNumber="false"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_textGravity="RIGHT">
+
+            </com.hbb20.CountryCodePicker>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
+            android:hint="Enter Receiver's Number"
+            android:inputType="phone"
+            android:paddingLeft="10dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/msg"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/number"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:autofillHints="Text Message To Send"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/ic_baseline_message_24"
+            android:drawablePadding="10dp"
+            android:hint="Enter Your Text."
+            android:inputType="textLongMessage"
+            android:paddingLeft="10dp"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/sendBtn"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/msg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/custom_button"
+            android:text="Send"
+            android:textColor="@color/theme_2"
+            android:textSize="14sp" />
+
+
+</RelativeLayout>
